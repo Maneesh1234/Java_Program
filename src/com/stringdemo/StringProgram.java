@@ -120,10 +120,32 @@ public class StringProgram {
  
         System.out.println(groupOfAnagram(list));
         
+        System.out.println("String panagram: ");
+//        Given a string Str. The task is to check if it is Pangram or not. 
+//        A pangram is a sentence containing every letter in the English Alphabet.
+//        Examples: 
+//        Input: “The quick brown fox jumps over the lazy dog” 
+//        Output: is a Pangram 
+//        Explanation: Contains all the characters from ‘a’ to ‘z’] 
+//        		Input: “The quick brown fox jumps over the dog”
+//        		Output: is not a Pangram 
+//        		Explanation: Doesn’t contain all the characters from ‘a’ to ‘z’, as ‘l’, ‘z’, ‘y’ are missing
+        s="The quick brown fox jumps over the lazy dog";
+        System.out.println("Check panagram: "+ checkPanagram(s));
+        
 	}
 	
 	
-	
+	public static String checkPanagram(String s) {
+		s = s.toLowerCase();
+		boolean f=true;
+		for (int i = 0; i < 26; i++) {
+			if(s.indexOf((char)(i+'a'))==-1) f= false;
+		}
+		if(f) return "string is panagram";
+		else
+		return "string is not  panagram";
+	}
 	
 	
 	public static List<String> groupOfAnagram(List<String> list){
